@@ -1,0 +1,34 @@
+2026-01-28 08:46:03.945882 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False} | ALLOW
+2026-01-28 08:46:35.470264 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False} | ALLOW
+2026-01-28 08:46:43.527564 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False} | ALLOW
+2026-01-28 08:46:52.004973 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False} | ALLOW
+2026-01-28 08:47:13.658654 |192.168.1.10 | GET /login | {'signature': 'SQL_INJECTION', 'behavior': False} | BLOCK
+2026-01-28 11:15:36.633809 |192.168.1.10 | GET /login | {'signature': 'SQL_INJECTION', 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:15:51.042003 |192.168.1.10 | GET /login?q=AHIJBSICGYUVHJBHDUVJHBHIUVJHBIUBJOHIHJBKVJBGUVJBHUVHG JHBUVJHBUVG HBJHUVGH BJHVGH BJHUVG | {'signature': 'SQL_INJECTION', 'behavior': False, 'heuristic': False} | BLOCK
+2026-01-28 11:16:23.364222 |192.168.1.10 | GET /login?q=AHIJBSICGYUVHJBHDUVJHBHIUVJHBIUBJOHIHJBKVJBGUVJBHUVHGJHBUVJHBUVGHBJHUVGHBJHVGHBJHUVG | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 11:16:43.799377 |192.168.1.10 | GET /login/AHIJBSICGYUVHJBHDUVJHBHIUVJHBIUBJOHIHJBKVJBGUVJBHUVHGJHBUVJHBUVGHBJHUVGHBJHVGHBJHUVG | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 11:16:51.367349 |192.168.1.10 | GET /login/AHIJBSICGYUVHJBHDUVJHBHIUVe8y9gwuivfs03y8thu2o3t4r9guibjn4p23r-u09w8honphqoruefwrJHBIUBJOHIHJBKVJBGUVJBHUVHGJHBUVJHBUVGHBJHUVGHBJHVGHBJHUVG | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 11:17:26.716994 |192.168.1.10 | GET /login/AHIJBSICGYUVHJBHDUVJHBHIUVe8y9gwuivfs03y8thu2o3t4r9guibjn4p23r-u09w8honphqoruefwrJHBIUBJOHIHJBKVJBGUVJBHUVHGJHBUVJHBUVGHBJHUVGHBJHVGHBJHUVG | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:17:35.720125 |192.168.1.10 | GET /login/AHIJBSICGYUVHJBHDUVJHBHIUVe8y9gwuivfs03y8thu2o3t4r9guibjn4p23r-u09w8honphqoruefwrJHBIUBJOHIHJBKVJBGUVJBHUVHGJHBUVJHBUVGHBJHUVGHBJHVGHBJHUVG | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:17:50.061562 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:18:01.613276 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:18:46.839310 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:19:31.377100 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:19:42.294810 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:20:12.042129 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:20:23.717395 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:36:20.082906 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:36:51.923737 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:48:16.043351 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': True} | BLOCK
+2026-01-28 11:53:40.646248 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 11:53:48.384477 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 11:54:24.509830 |192.168.1.10 | GET /login | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 14:08:27.609014 |192.168.1.10 | GET /login/?x=<script>alert(1)</script> | {'signature': 'XSS', 'behavior': False, 'heuristic': False} | BLOCK
+2026-01-28 14:09:06.903391 |192.168.1.10 | GET /login//?u=admin' or 1=1 | {'signature': 'SQL_INJECTION', 'behavior': False, 'heuristic': False} | BLOCK
+2026-01-28 14:41:08.028854 |192.168.1.10 | GET /login//?u=admin' or 1=1 | {'signature': 'SQL_INJECTION', 'behavior': False, 'heuristic': False} | BLOCK
+2026-01-28 14:41:19.512880 |192.168.1.10 | GET /login//?u=admin' or 1=1 | {'signature': 'SQL_INJECTION', 'behavior': True, 'heuristic': False} | BLOCK
+2026-01-28 14:41:29.701817 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': True, 'heuristic': False} | BLOCK
+2026-01-28 14:41:46.627520 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 14:42:01.464655 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-28 14:46:03.313216 |192.168.1.10 | GET /login/ | {'signature': None, 'behavior': False, 'heuristic': False} | ALLOW
+2026-01-29 04:36:13.228895 |192.168.1.10 | GET /login | {'results': {'signature': 'SQL_INJECTION', 'behavior': ['MALICIOUS_UA'], 'heuristic': False}, 'score': 70, 'reasons': ['SQL_INJECTION', 'MALICIOUS_UA']} | BLOCK

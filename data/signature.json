@@ -1,0 +1,344 @@
+{
+  "SQL_INJECTION": [
+    "'\\sor\\s1=1",
+    "\"\\sor\\s1=1",
+    "union\\s+select",
+    "select\\s+.*from",
+    "insert\\s+into",
+    "update\\s+.*set",
+    "delete\\s+from",
+    "drop\\s+table",
+    "information_schema",
+    "--",
+    "#",
+    "/\\*",
+    "or\\s+1=1",
+    "or\\s'1'='1",
+    "or\\s\"1\"=\"1",
+    "and\\s+1=1",
+    "benchmark\\(",
+    "cast\\(",
+    "convert\\(",
+    "char\\(",
+    "exec\\(",
+    "execute\\(",
+    "xp_cmdshell",
+    "sp_\\w+",
+    "un\\s*ion\\s+all\\s+select",
+    "/!\\d+union",
+    "uNiOn\\s+SeLeCt",
+    "\\.\\.\\sor",
+    "'\\s--",
+    "\"\\s*--"
+  ],
+
+  "BLIND_SQLI": [
+    "sleep\\(",
+    "benchmark\\(",
+    "waitfor\\s+delay",
+    "pg_sleep\\(",
+    "if\\s*\\(",
+    "exists\\s*\\(",
+    "substring\\(",
+    "ascii\\(",
+    "waitfor\\s+time",
+    "heavy\\s+dbms_pipe",
+    "dbms_lock.sleep"
+  ],
+
+  "NOSQL_INJECTION": [
+    "\\$ne",
+    "\\$gt",
+    "\\$regex",
+    "\\$where",
+    "\\$in",
+    "\\$nin",
+    "\\$eq",
+    "\\$lt",
+    "\\$lte",
+    "\\$gte",
+    "\\$all",
+    "\\$exists",
+    "\\$mod",
+    "\\$size",
+    "function\\s*\\(",
+    "\\$\\s*where"
+  ],
+
+  "XSS": [
+    "<script",
+    "</script",
+    "javascript:",
+    "onerror=",
+    "onload=",
+    "onmouseover=",
+    "<img",
+    "<svg",
+    "<iframe",
+    "on\\w+\\s*=\\s*[\"']?javascript:",
+    "<body",
+    "<html",
+    "vbscript:",
+    "data:",
+    "livescript:",
+    "expression\\(",
+    "<object",
+    "<embed",
+    "on\\w+\\s*=",
+    "alert\\(",
+    "prompt\\(",
+    "confirm\\("
+  ],
+
+  "SSTI": [
+    "\\{\\{.*\\}\\}",
+    "\\$\\{.*\\}",
+    "<%.*%>",
+    "\\{%.*%\\}",
+    "\\{[#].*\\}",
+    "\\{[#$].*\\}",
+    "\\[%.*%\\]",
+    "<#.*#>",
+    "freemarker.template",
+    "\\{\\$\\{.*\\}\\}",
+    "\\{\\{7\\*'7'\\}\\}",
+    "\\{\\{config\\}\\}"
+  ],
+
+  "COMMAND_INJECTION": [
+    ";\\s*",
+    "&&",
+    "\\|\\|",
+    "\\|\\s*",
+    "`",
+    "\\$\\(",
+    "\\)\\s*&&",
+    ";\\s*\\$\\(",
+    "\\$\\{IFS\\}",
+    ">\\s*\\$\\(",
+    "<\\s*\\$\\(",
+    "\\{\\};",
+    "\\.\\.",
+    ",,"
+  ],
+
+  "OS_INJECTION": [
+    "cmd\\.exe",
+    "/bin/sh",
+    "/bin/bash",
+    "powershell",
+    "cmd\\s+/c",
+    "/bin/dash",
+    "nc\\s+-e",
+    "bash\\s+-c",
+    "perl\\s+-e",
+    "python\\s+-c"
+  ],
+
+  "DIRECTORY_TRAVERSAL": [
+    "\\.\\./",
+    "\\.\\.\\\\",
+    "%2e%2e%2f",
+    "%2e%2e\\\\",
+    "..\\\\",
+    "%2e%2e%5c",
+    "\\\\u002e\\\\u002e/",
+    "%c0%ae%c0%ae%c0%af",
+    "..%2f",
+    "%252e%252e%252f",
+    "\\x2e\\x2e\\x2f"
+  ],
+
+  "LFI": [
+    "/etc/passwd",
+    "/etc/shadow",
+    "boot.ini",
+    "win.ini",
+    "/proc/self/environ",
+    "/proc/version",
+    "/proc/self/cmdline",
+    "/var/log/apache2/access.log",
+    "\\.\\./etc/passwd",
+    "..%00/etc/passwd"
+  ],
+
+  "RFI": [
+    "http://",
+    "https://",
+    "ftp://",
+    "php://input",
+    "data://",
+    "expect://",
+    "jar://",
+    "file://"
+  ],
+
+  "XXE": [
+    "<!doctype",
+    "<!entity",
+    "<!DOCTYPE",
+    "<!ENTITY",
+    "entity\\s+",
+    "&xxe;",
+    "SYSTEM\\s+\"file:",
+    "PUBLIC\\s+\"",
+    "%\\s+file;"
+  ],
+
+  "SSRF": [
+    "127\\.0\\.0\\.1",
+    "localhost",
+    "169\\.254\\.169\\.254",
+    "0\\.0\\.0\\.0",
+    "metadata\\.google\\.internal",
+    "100\\.100\\.100\\.200",
+    "168\\.63\\.129\\.16",
+    "2130706433",
+    "0177\\.0\\.0\\.1"
+  ],
+
+  "OPEN_REDIRECT": [
+    "url=http",
+    "redirect=http",
+    "next=http",
+    "redirect_uri=",
+    "rurl=",
+    "dest=",
+    "destination=",
+    "target=",
+    "return=",
+    "javascript:",
+    "//[a-z0-9-]+\\.[a-z]{2,}\\.[a-z]{2,}",
+    "%2f%2f"
+  ],
+
+  "DESERIALIZATION": [
+    "O:\\d+:",
+    "rO0AB",
+    "AAEAAAD",
+    "cos\\n",
+    "c__builtin__",
+    "\\x04\\x08",
+    "\\xAC\\xED\\x00\\x05"
+  ],
+
+  "FILE_UPLOAD_ATTACK": [
+    "\\.php",
+    "\\.jsp",
+    "\\.exe",
+    "\\.sh",
+    "\\.asp",
+    "\\.aspx",
+    "\\.pl",
+    "\\.py",
+    "\\.jspf",
+    "\\.jspx",
+    "\\.php5",
+    "\\.phtml",
+    "%00\\.php",
+    "\\.php%00\\.jpg",
+    "exploit\\.php"
+  ],
+
+  "PHP_INJECTION": [
+    "eval\\(",
+    "base64_decode\\(",
+    "system\\(",
+    "shell_exec\\(",
+    "exec\\(",
+    "passthru\\(",
+    "preg_replace\\(/.*\\/e",
+    "create_function\\(",
+    "assert\\(",
+    "call_user_func\\(",
+    "\\$\\{\\$",
+    "gzinflate\\(",
+    "str_rot13\\("
+  ],
+
+  "JAVA_INJECTION": [
+    "Runtime\\.getRuntime",
+    "ProcessBuilder",
+    "java\\.lang\\.ProcessImpl",
+    "ProcessImpl\\.create"
+  ],
+
+  "POWERSHELL_INJECTION": [
+    "powershell",
+    "-enc",
+    "iex",
+    "-encodedcommand",
+    "-nop",
+    "-noexit",
+    "-windowstyle",
+    "-executionpolicy",
+    "invoke-expression",
+    "new-object"
+  ],
+
+  "LDAP_INJECTION": [
+    "\\\\\\)",
+    "\\(\\|",
+    "\\(&\\(",
+    "\\)\\|\\(",
+    "\\\\\\)\\(",
+    "\\(\\*\\)"
+  ],
+
+  "XPATH_INJECTION": [
+    "//",
+    "\\[@",
+    "\\.\\.",
+    "or\\s1=1",
+    "'\\sor\\s*'",
+    "ancestor::",
+    "descendant::",
+    "following-sibling::"
+  ],
+
+  "PROTOTYPE_POLLUTION": [
+    "__proto__",
+    "constructor\\[prototype\\]",
+    "\\[\\['proto'\\]\\]",
+    "\\['constructor'\\]\\['prototype'\\]",
+    "Object\\.prototype"
+  ],
+
+  "HEADER_INJECTION": [
+    "\\r\\n",
+    "%0d%0a",
+    "\\n",
+    "%0a",
+    "\\r",
+    "%0d",
+    "Content-Length:",
+    "Set-Cookie:",
+    "Location:"
+  ],
+
+  "SCANNER_FINGERPRINT": [
+    "sqlmap",
+    "nikto",
+    "nmap",
+    "acunetix",
+    "burp",
+    "nessus",
+    "openvas",
+    "zaproxy",
+    "skipfish",
+    "w3af",
+    "whatweb"
+  ],
+
+  "CORS_MISCONFIG": [
+    "null",
+    "Access-Control-Allow-Origin: *",
+    "Access-Control-Allow-Credentials: true"
+  ],
+
+  "CSRF": [
+    "<form",
+    "action=",
+    "method=POST"
+  ]
+}
