@@ -14,10 +14,6 @@ SentinelShield is a hybrid Web Application Firewall (WAF) and Intrusion Detectio
 - Manual IP banning from dashboard
 - Inline WAF gateway (Client → WAF → Backend)
 
-## 🧠 Architecture
-Client → SentinelShield WAF → Backend Application  
-                        ↓  
-                     Logs → Dashboard
 
 ## 🧰 Technologies Used
 - Python, Flask
@@ -25,17 +21,6 @@ Client → SentinelShield WAF → Backend Application
 - Node.js, npm
 - JSON logging
 - curl / Browser
-
-## 📁 Project Structure
-SentinelShield/
-├── backend_app.py
-├── waf_gateway.py
-├── run.sh
-├── core/
-├── detectors/
-├── api/
-├── data/
-└── sentinelshield-ui/
 
 ## ▶️ How to Run
 1. Start Application:
